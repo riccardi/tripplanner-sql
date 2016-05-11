@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container maincontent">
+    <div class="row">
+        <div class="col-md-8 map">[[map]]</div>
+        <div class="col-md-4">
+            <div id="choices-container">
+                <ol>
+                    <li>Hotels
+                        <br />
+                        <select>
+                            {% for hotel in hotels %}
+                            <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                    <li>Restaurants
+                        <br />
+                        <select>
+                            {% for restaurant in restaurants %}
+                            <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                    <li>Things To Do
+                        <br />
+                        <select>
+                            {% for activity in activities%}
+                            <option value="{{ activity.id }}">{{ activity.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                </ol>
+            </div>
+            <h2>Day 2</h2>
+            <div id="itinerary-container">
+                <div id="days">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

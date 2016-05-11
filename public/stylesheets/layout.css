@@ -1,0 +1,13 @@
+html {
+  background-color: blue; }
+
+.map {
+  background-color: #FF0000; }
+
+.maincontent {
+  margin-top: 50px; }
+
+#choices-container {
+  background-color: #CCB48D; }
+  #choices-container ol {
+    list-style-type: none; }
