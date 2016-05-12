@@ -1,13 +1,83 @@
-html {
-  background-color: blue; }
-
-.map {
-  background-color: #FF0000; }
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1a1a1a; }
 
 .maincontent {
   margin-top: 50px; }
 
-#choices-container {
-  background-color: #CCB48D; }
-  #choices-container ol {
-    list-style-type: none; }
+#choices-container, #itinerary-container {
+  background-color: #376B9E;
+  background: rgba(223, 224, 230, 0.8);
+  box-shadow: 2px 3px 18px -3px rgba(0, 0, 0, 0.75);
+  margin-bottom: 30px; }
+  #choices-container .box-header, #itinerary-container .box-header {
+    background-color: #003556;
+    color: #fff;
+    padding: 1px 10px; }
+    #choices-container .box-header h1, #itinerary-container .box-header h1 {
+      font-size: 30px;
+      margin: 10px 0px; }
+  #choices-container .inner, #itinerary-container .inner {
+    padding: 15px 15px 30px; }
+  #choices-container ol, #itinerary-container ol {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px; }
+    #choices-container ol .form-control, #itinerary-container ol .form-control {
+      width: calc(100% - 55px);
+      display: inline-block;
+      margin-right: 10px; }
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+#choices-container-row .col-md-4 {
+  position: absolute;
+  top: 80px;
+  left: 20px; }
+
+.nav > li > a:focus, .nav > li > a:hover {
+  background-color: #fff; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff; }
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #9d9d9d; }
+
+.navbar.navbar-inverse {
+  background-color: #003556; }
+  .navbar.navbar-inverse .navbar-brand {
+    color: #fff; }
+
+.nav-pills > li > a {
+  border-radius: 1px; }
+
+.glyphicon {
+  font-size: 14px; }
+
+.btn-default {
+  background-color: transparent;
+  border: 0px; }
+
+.btn-default:hover {
+  color: #7F7F7F;
+  background-color: transparent; }
+
+.tab-pane ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px 0px 0px 10px; }
+  .tab-pane ul li {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 16px; }
+    .tab-pane ul li .glyphicon {
+      position: absolute;
+      right: 20px; }

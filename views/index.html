@@ -1,47 +1,94 @@
 {% extends "layout.html" %} {% block content %}
 <div class="container maincontent">
-    <div class="row">
-        <div class="col-md-8 map">[[map]]</div>
+    <div id="map"></div>
+    <div class="row" id="choices-container-row">
         <div class="col-md-4">
             <div id="choices-container">
-                <ol>
-                    <li>Hotels
-                        <br />
-                        <select>
-                            {% for hotel in hotels %}
-                            <option value="{{ hotel.id }}">{{ hotel.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </li>
-                    <li>Restaurants
-                        <br />
-                        <select>
-                            {% for restaurant in restaurants %}
-                            <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </li>
-                    <li>Things To Do
-                        <br />
-                        <select>
-                            {% for activity in activities%}
-                            <option value="{{ activity.id }}">{{ activity.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </li>
-                </ol>
-            </div>
-            <h2>Day 2</h2>
-            <div id="itinerary-container">
-                <div id="days">
-                    <ul class="nav nav-pills">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Menu 1</a></li>
-                        <li><a href="#">Menu 2</a></li>
-                        <li><a href="#">Menu 3</a></li>
-                    </ul>
+                <div class="box-header">
+                    <h1>Add Items</h1></div>
+                <div class="inner">
+                    <ol>
+                        <li>
+                            <h3>Hotels</h3>
+                            <select class="form-control">
+                                {% for hotel in hotels %}
+                                <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                        </li>
+                        <li>
+                            <h3>Restaurants</h3>
+                            <select class="form-control">
+                                {% for restaurant in restaurants %}
+                                <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                        </li>
+                        <li>
+                            <h3>Things To Do</h3>
+                            <select class="form-control">
+                                {% for activity in activities%}
+                                <option value="{{ activity.id }}">{{ activity.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                        </li>
+                    </ol>
                 </div>
             </div>
+            <div id="itinerary-container">
+                <div id="days">
+                    <div class="box-header">
+                        <h1>Current Itinerary</h1></div>
+                    <div class="inner">
+                        <ul class="nav nav-pills">
+                            <li class="active"><a data-toggle="pill" href="#home">Day 1</a></li>
+                            <li><a data-toggle="pill" href="#menu1">Day 2</a></li>
+                            <li><a data-toggle="pill" href="#menu2">Day 3</a></li>
+                            <li><a data-toggle="pill" href="#menu3">Day 4</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane fade in active">
+                                <h3>My Hotels</h3>
+                                <ul class="hotels">
+                                    <li>Andaz Wall Street <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove "></span></button></li>
+                                </ul>
+                                <h3>My Restaurants</h3> 
+                                <ul class="restaurants">
+                                	<li>The Capital Grille <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove "></span></button></li>
+                                	 <li>Dos Toros <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove "></span></button></li>
+                                </ul>
+                                <h3>My Activities</h3> 
+                                <ul class="activities">
+                                	<li>South Street Seaport <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove "></span></button></li>
+                                	<li>Central Park <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove "></span></button></li>
+                                </ul>
+                            </div>
+                            <div id="menu1" class="tab-pane fade">
+                                <h3>My Hotels</h3> Andaz Wall Street
+                                <h3>My Restaurants</h3> The Capital Grille Dos Toros
+                                <h3>My Activities</h3> South Street Seaport Central Park
+                            </div>
+                            <div id="menu2" class="tab-pane fade">
+                                <h3>My Hotels</h3> Andaz Wall Street
+                                <h3>My Restaurants</h3> The Capital Grille Dos Toros
+                                <h3>My Activities</h3> South Street Seaport Central Park
+                            </div>
+                            <div id="menu3" class="tab-pane fade">
+                                <h3>My Hotels</h3> Andaz Wall Street
+                                <h3>My Restaurants</h3> The Capital
+                                <br /> Grille Dos Toros
+                                <h3>My Activities</h3> South Street Seaport
+                                <br />
+                                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove "></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
         </div>
     </div>
 </div>
