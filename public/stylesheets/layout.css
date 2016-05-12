@@ -11,7 +11,7 @@ body {
   background-color: #376B9E;
   background: rgba(223, 224, 230, 0.8);
   box-shadow: 2px 3px 18px -3px rgba(0, 0, 0, 0.75);
-  margin-bottom: 30px; }
+  margin-bottom: 20px; }
   #choices-container .box-header, #itinerary-container .box-header {
     background-color: #003556;
     color: #fff;
@@ -25,21 +25,30 @@ body {
     list-style-type: none;
     margin: 0px;
     padding: 0px; }
+    #choices-container ol li:first-child h3, #itinerary-container ol li:first-child h3 {
+      margin-top: 5px; }
     #choices-container ol .form-control, #itinerary-container ol .form-control {
       width: calc(100% - 55px);
       display: inline-block;
       margin-right: 10px; }
+
+#itinerary-container {
+  margin-bottom: 0px; }
+
+#itinerary-container .inner {
+  padding-bottom: 15px; }
 
 #map {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  bottom: 0;
+  min-height: 962px; }
 
 #choices-container-row .col-md-4 {
   position: absolute;
-  top: 80px;
+  top: 70px;
   left: 20px; }
 
 .nav > li > a:focus, .nav > li > a:hover {
@@ -56,8 +65,23 @@ body {
   .navbar.navbar-inverse .navbar-brand {
     color: #fff; }
 
+.nav-pills {
+  margin-bottom: 20px; }
+
 .nav-pills > li > a {
-  border-radius: 1px; }
+  background-color: transparent;
+  color: #1a1a1a;
+  font-size: 17px;
+  border-radius: 0px; }
+
+.nav-pills > li > a:hover, .nav-pills > li > a:focus {
+  background-color: transparent;
+  border-bottom: 5px solid #9d9d9d; }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  border-bottom: 5px solid #fff;
+  background-color: transparent;
+  color: #1a1a1a; }
 
 .glyphicon {
   font-size: 14px; }
@@ -81,3 +105,10 @@ body {
     .tab-pane ul li .glyphicon {
       position: absolute;
       right: 20px; }
+
+.alignright {
+  text-align: right;
+  padding-right: 9px; }
+
+hr {
+  margin-bottom: 14px; }

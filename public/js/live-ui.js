@@ -22,4 +22,22 @@ function initialize_gmaps() {
 
 $(document).ready(function() {
     initialize_gmaps();
+    $("ol#add_items").on("click", 'li button', function(event) {
+        var selected = $(this).prev().val();
+        var placeId = $(this).prev().find('option[value="' + selected + '"]').attr("placeId");
+        var category = $(this).prev().attr("id");
+        // if category is hotel limit to one li
+        console.log(category);
+        console.log(placeId);
+        if ($("#day1 ul." + category).find('li[placeid="' + placeId + '"]')) {
+            $("#day1 ul." + category).append('<li placeid="' + placeId + '">' + selected + ' <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove "></span></button></li>');
+        }
+    });
+
+
+    $(".tab-content").on("click", "li button", function(event) {
+        $(this).parent().remove();
+    });
+
+
 });
